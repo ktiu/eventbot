@@ -2,6 +2,7 @@
   "dependencies": {
     "@types/node": "^16.11.11",
     "data-store": "^4.0.3",
+    "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "markdown-escape": "^1.1.0",
     "node-ical": "^0.14.1",
