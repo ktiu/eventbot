@@ -101,8 +101,9 @@ const rangeEnd = moment(rangeStart).add(3, 'd')
 
 subscriptions.forEach(subscription => {
   const showEvents: showEvent[] = new Array()
-  let readEvents = ical.sync.parseFile(`cache/${subscription.name}.ics`)
-
+  let readEvents = ical.sync.parseFile(
+    path.join(__dirname, `cache/${subscription.name}.ics`)
+  )
   for (let k in readEvents) {
     if (!Object.prototype.hasOwnProperty.call(readEvents, k)) continue;
     const event = readEvents[k];

@@ -2,10 +2,8 @@
 exports.__esModule = true;
 var axios_1 = require("axios");
 var fs_1 = require("fs");
-// const store = require('data-store')({ path: path.join(__dirname, 'storage/read.json')})
 var path = require('path');
 var yaml = require('yaml');
-var store = require('data-store')({ path: path.join(__dirname, 'storage/read.json') });
 var subscriptionsFile = path.join(__dirname, 'subscriptions.yaml');
 var subscriptions = yaml.parse((0, fs_1.readFileSync)(subscriptionsFile, 'utf8'));
 var syncCache = function (subscription) {
@@ -14,7 +12,7 @@ var syncCache = function (subscription) {
         method: 'GET',
         responseType: 'stream'
     }).then(function (response) {
-        response.data.pipe((0, fs_1.createWriteStream)("cache/".concat(subscription.name, ".ics")));
+        response.data.pipe((0, fs_1.createWriteStream)(path.join(__dirname, "cache/".concat(subscription.name, ".ics"))));
     })["catch"](function (error) {
         if (error.response) {
             console.log(error.response.data);

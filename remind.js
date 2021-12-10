@@ -86,7 +86,7 @@ var rangeStart = (0, moment_1["default"])().startOf('day');
 var rangeEnd = (0, moment_1["default"])(rangeStart).add(3, 'd');
 subscriptions.forEach(function (subscription) {
     var showEvents = new Array();
-    var readEvents = ical.sync.parseFile("cache/".concat(subscription.name, ".ics"));
+    var readEvents = ical.sync.parseFile(path_1["default"].join(__dirname, "cache/".concat(subscription.name, ".ics")));
     var _loop_1 = function (k) {
         if (!Object.prototype.hasOwnProperty.call(readEvents, k))
             return "continue";

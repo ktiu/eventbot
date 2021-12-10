@@ -18,7 +18,9 @@ const syncCache = (subscription: Subscription): void => {
     method: 'GET',
     responseType: 'stream'
   }).then((response) => {
-    response.data.pipe(createWriteStream(`cache/${subscription.name}.ics`))
+    response.data.pipe(createWriteStream(
+      path.join(__dirname, `cache/${subscription.name}.ics`)
+    ))
   }).catch(function(error) {
     if (error.response) {
       console.log(error.response.data);
