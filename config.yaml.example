@@ -5,4 +5,4 @@ production: false
 
 webhookURL:
 username: Eventbot
-icon: https://geocom.uni-frankfurt.de/eventbot/assets/icon.jpg
+iconURL: https://geocom.uni-frankfurt.de/eventbot/assets/icon.jpg
