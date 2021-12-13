@@ -1,9 +1,7 @@
-- name: test
-  url: https://geocom.uni-frankfurt.de/radicale/ihg/28636bb0-0bf7-5ffa-1e98-dd44844cbce7/
-  channels: [ bot-sandbox ]
 - name: ihg
   url: https://geocom.uni-frankfurt.de/radicale/ihg/5012a739-dbaf-334b-f093-8db1860bc26e/
-  channels: [ allgemein ]
+  channels: [ town-square ]
+
 - name: mittelbau
   url: https://geocom.uni-frankfurt.de/radicale/ihg/d806b31d-dd3d-9d97-d3e5-f179addeb60a/
   channels: [ mittelbau ]
