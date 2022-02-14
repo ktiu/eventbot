@@ -57,11 +57,11 @@ class showEvent {
 
 const process = (event: showEvent, subscription: Subscription): void => {
   let message = [
-    `**${escape(event.summary)}**`,
+    `**${escape(event.summary, ['slashes'])}**`,
     `${event.start.format("H:mm")}–${event.end.format("H:mm")}` +
-    (event.location ? ` | ${escape(event.location)}` : '') +
+    (event.location ? ` | ${escape(event.location, ['slashes'])}` : '') +
     (event.url ? ` | ${event.url}` : '') +
-    (event.description ? `\n\n${escape(event.description)}`: ''),
+    (event.description ? `\n\n${escape(event.description, ['slashes'])}`: ''),
     `\n*Dieser Termin begint ${event.start.fromNow()}.*`
   ].join('\n')
 

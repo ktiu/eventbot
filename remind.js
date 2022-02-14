@@ -45,11 +45,11 @@ var showEvent = /** @class */ (function () {
 }());
 var process = function (event, subscription) {
     var message = [
-        "**".concat((0, markdown_escape_1["default"])(event.summary), "**"),
+        "**".concat((0, markdown_escape_1["default"])(event.summary, ['slashes']), "**"),
         "".concat(event.start.format("H:mm"), "\u2013").concat(event.end.format("H:mm")) +
-            (event.location ? " | ".concat((0, markdown_escape_1["default"])(event.location)) : '') +
+            (event.location ? " | ".concat((0, markdown_escape_1["default"])(event.location, ['slashes'])) : '') +
             (event.url ? " | ".concat(event.url) : '') +
-            (event.description ? "\n\n".concat((0, markdown_escape_1["default"])(event.description)) : ''),
+            (event.description ? "\n\n".concat((0, markdown_escape_1["default"])(event.description, ['slashes'])) : ''),
         "\n*Dieser Termin begint ".concat(event.start.fromNow(), ".*")
     ].join('\n');
     subscription.channels.forEach(function (channel) {
